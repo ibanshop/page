@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>jQuery MxSlider Plugin Demo</title>
+<meta name="viewport" content="initial-scale=1.0, width=device-width">
+<link rel="stylesheet" href="https://rawcdn.githack.com/ibanshop/page/aaa3dacc1f77468d6e19e505012d17cb08ac3741/MxSlider.css">
+<link href="https://rawcdn.githack.com/ibanshop/page/aaa3dacc1f77468d6e19e505012d17cb08ac3741/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<style>
+/* Styles for Bugs Bunny */
+
+
+
+@import 'https://fonts.googleapis.com/css?family=Oswald';
+
+body { background-color: ; }
+h1 { margin:150px auto; text-align:center;}
+
+.sliderWrapper {
+  width: 90%;
+  max-width: 700px;
+  margin: 40px auto;
+
+}
+
+.mySlider { border: 4px solid #27425d; }
+
+.sliderDescription {
+  position: absolute;
+  display: block;
+  max-width: 80%;
+  padding: 10px;
+  bottom: 40px;
+  background-color: rgba(39, 66, 93, 0.9);
+  top:110px;
+}
+
+.sliderDescription a {
+  font-family: 'Oswald', sans-serif;
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.mx-navigation {
+  margin: 4px;
+  top: 42%;
+}
+
+.mx-prev, .mx-next { background-color: #27425d; }
+
+.mx-prev {
+  background-image: url(https://github.com/ibanshop/page/blob/master/arr_l.png?raw=true);
+  background-repeat: no-repeat;
+  background-position: 2px 5px;
+}
+
+.mx-next {
+  background-image: url(https://github.com/ibanshop/page/blob/master/arr_r.png?raw=true);
+  background-repeat: no-repeat;
+  background-position: 8px 5px;
+}
+
+.mx-nav_dots { top: 88%; }
+
+.mx-nav_dots span {
+  margin: 0px 4px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border: 3px solid #27425d;
+  background-color: #fff;
+}
+
+.mx-nav_dots span.dotActive { background-color: #27425d; }
+.hidden { display:none;}
+</style>
+<style>
+a,
+a:hover {
+    -webkit-transition: color ease-in-out 800ms;
+    color: blue;
+}
+
+a:hover {
+    color: #0ff2eb;
+}
+</style>
+</head>
+<body>
+
+
+<div class="sliderWrapper hidden"> 
+  <!-- Slider -->
+  <div class="mySlider" align="center" style="height:1200px;width:800px;">
+  
+    <div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"><img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno1.jpg" width="320" height="320" style="border:10px; solid:1px;"/> 
+	  <a href="https://iban-shop.blogspot.com/2014/06/pinakas-no1.html">ΠΙΝΑΚΑΣ Νο1 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+    <div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno2.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+      <a href="https://iban-shop.blogspot.com/2019/09/pinakas-no2.html">ΠΙΝΑΚΑΣ Νο2 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a></div>
+    </div>
+    <div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno3.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+      <a href="https://iban-shop.blogspot.com/2019/09/pinakas-no3.html">ΠΙΝΑΚΑΣ Νο3 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno4.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+      <a href="https://iban-shop.blogspot.com/2019/09/pinakas-no4.html">ΠΙΝΑΚΑΣ Νο4 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno5.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/09/pinakas-no5.html">ΠΙΝΑΚΑΣ Νο5 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno6.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/09/pinakas-no6.html">ΠΙΝΑΚΑΣ Νο6 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno7.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/09/pinakas-no7.html">ΠΙΝΑΚΑΣ Νο7 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno8.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/09/pinakas-no8.html">ΠΙΝΑΚΑΣ Νο8 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno9.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/09/pinakas-no9.html">ΠΙΝΑΚΑΣ Νο9 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno10.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/09/piankas-no10.html">ΠΙΝΑΚΑΣ Νο10 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno11.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakas-no11.html">ΠΙΝΑΚΑΣ Νο11 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno12.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakas-no12.html">ΠΙΝΑΚΑΣ Νο12 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno13.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakas-no13.html">ΠΙΝΑΚΑΣ Νο13 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno14.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakas-no14.html">ΠΙΝΑΚΑΣ Νο14 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno15.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakas-no15.html">ΠΙΝΑΚΑΣ Νο15 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno16.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakas-no16.html">ΠΙΝΑΚΑΣ Νο16 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno17.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakas-no17.html">ΠΙΝΑΚΑΣ Νο17 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno18.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakas-no18.html">ΠΙΝΑΚΑΣ Νο18 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno19.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakas-no19.html">ΠΙΝΑΚΑΣ Νο19 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno20.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakas-no20.html">ΠΙΝΑΚΑΣ Νο20 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://github.com/ibanshop/page/blob/master/iban%20photos/PINAKASno21.jpg?raw=true" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakas-no21.html">ΠΙΝΑΚΑΣ Νο21 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://github.com/ibanshop/page/blob/master/iban%20photos/PINAKASno22.jpg?raw=true" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakas-no22.html">ΠΙΝΑΚΑΣ Νο22 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://github.com/ibanshop/page/blob/master/iban%20photos/PINAKASno23.png?raw=true" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakas-no23.html">ΠΙΝΑΚΑΣ Νο23 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno24.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakas-no24.html">ΠΙΝΑΚΑΣ Νο24 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://github.com/ibanshop/page/blob/master/iban%20photos/PINAKASno25.jpg?raw=true" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pianakas-no25.html">ΠΙΝΑΚΑΣ Νο25 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno26.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakas-no26.html">ΠΙΝΑΚΑΣ Νο26 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno27.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakasno27.html">ΠΙΝΑΚΑΣ Νο27 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno28.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakas-no28.html">ΠΙΝΑΚΑΣ Νο28 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno29.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakas-no29.html">ΠΙΝΑΚΑΣ Νο29 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno30.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakasno30.html">ΠΙΝΑΚΑΣ Νο30 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno31.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakas-no31.html">ΠΙΝΑΚΑΣ Νο31 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno32.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakasno32.html">ΠΙΝΑΚΑΣ Νο32 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno33.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/blog-post.html">ΠΙΝΑΚΑΣ Νο33 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno34.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakasno34.html">ΠΙΝΑΚΑΣ Νο34 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno35.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakasno34_25.html">ΠΙΝΑΚΑΣ Νο35 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno35.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakasno34_25.html">ΠΙΝΑΚΑΣ Νο35 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+		<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno36.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakas-no36.html">ΠΙΝΑΚΑΣ Νο36 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno37.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakasno37.html">ΠΙΝΑΚΑΣ Νο37 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno38.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakasno38.html">ΠΙΝΑΚΑΣ Νο38 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+		<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno39.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakasno39.html">ΠΙΝΑΚΑΣ Νο39 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+		<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno40.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakasno40.html">ΠΙΝΑΚΑΣ Νο40 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno41.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakasno41.html">ΠΙΝΑΚΑΣ Νο41 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno42.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakasno42.html">ΠΙΝΑΚΑΣ Νο42 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno43.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakasno43.html">ΠΙΝΑΚΑΣ Νο43 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno44.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakasno44.html">ΠΙΝΑΚΑΣ Νο44 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno45.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakasno45.html">ΠΙΝΑΚΑΣ Νο45 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno46.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakasno46.html">ΠΙΝΑΚΑΣ Νο46 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno47.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakasno47.html">ΠΙΝΑΚΑΣ Νο47 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno48.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakasno48.html">ΠΙΝΑΚΑΣ Νο48 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno49.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakasno49.html">ΠΙΝΑΚΑΣ Νο49 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+	<div> <img src="https://lh3.googleusercontent.com/GHFIF3jDSikqJo92vOQ1mDyUc5GGW3_kgmmC_ulYuwWF18rNOAS6LD2lf4Ra2gkYtGbs1nV7My7aTvtviJK2ZmvjXYW_7QpjhdHFK6DX5qn3WhPJHFUcaqcXxsdOzwQLMQiaM1_hrJ1nzek1xjx2YXM4I8DSpFjqIhvHhr5Yjvxds3V0X1iATZZyLsrwWtnNMOxNFQsm1AUkQAgXbLVEkRxIRYhfNsD1hXw83Sbk8SIaJjiG4C9SA_GhYbemRvRQfsbfSkleKe3qavqU4WJq_cY1sWiewSlWbW1KthD5_hdXb_--9CPYlpyxdmUKkLqgsBFdi95yQHxdEuUF_Jro719d5Jxs0uRF1gyaSdo12x2l5frOAcm0DipH4kcHxtE8sdoA8YKII6Gbj_S9HqbDzwwrgXXcuSjpcUlG6pJZhtAFDYEXad278elQPcL5rp7Ivez1NSx15nXkGGJsXDNwv9_OLu4GeE2vcn9kRd8rHlclgMkRGjem5sVRMYiIDZZWtzRdCUIRDtS_tq-9FTX2xAkHN8q1higafbhUTmKJ6pBFppfE2iD_EvUpPjqJ7dudjgdeA_F_m9CkF_IPdU2lJ533oSRu-cv1NlIIIMyvtmpZNWJm8IxNsRsRkFyaf5c1ydJ9FEjivbWIK7FNzFeQ3-1o0YFv4wc9FjwEpMqKxQWKkUHvq75LYUeSlrmIcb3eMee0yeJCVaj29SQ1sPV9oxg446uB5fVdzD4DLpkezspY1XU=w938-h625-no" alt="" />
+      <div class="sliderDescription"> <img src="https://raw.githubusercontent.com/ibanshop/page/master/iban%20photos/PINAKASno50.jpg" width="320" height="320" style="border:10px; solid:1px;"/>
+              <a href="https://iban-shop.blogspot.com/2019/10/pinakas-no22_25.html">ΠΙΝΑΚΑΣ Νο50 ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ>></a> </div>
+    </div>
+  </div>
+  <!-- Slider --> 
+</div>
+<!-- My box for the slider --> 
+
+<!-- Scripts --> 
+<script src="https://rawcdn.githack.com/ibanshop/page/aaa3dacc1f77468d6e19e505012d17cb08ac3741/jquery-1.12.4.min.js"></script> 
+<script src="https://rawcdn.githack.com/ibanshop/page/aaa3dacc1f77468d6e19e505012d17cb08ac3741/imagesloaded.pkgd.min.js"></script>
+<script src="https://rawcdn.githack.com/ibanshop/page/aaa3dacc1f77468d6e19e505012d17cb08ac3741/MxSlider.js"></script> 
+<script>
+			$(document).ready(function(){	
+			
+			$('body').imagesLoaded( function() {
+				$( ".sliderWrapper" ).removeClass( "hidden" );
+	$( '.mySlider' ).MxSlider( {
+					autoPlay: true,
+					dots: true,
+					timeSlide: 500
+				} );
+});	
+			
+			})
+		</script>
+        
+</body>
+</html>
